@@ -5,7 +5,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import candy.com.candyapp.library.models.Opinion;
 import candy.com.candyapp.library.util.QueryBuilder;
 
 /**
@@ -36,13 +35,13 @@ public class CandyDb extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(QueryBuilder.createTableScript(Opinion.class));
+
         Log.v("TABLO OLUSTU","OPINION");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + Opinion.class.getSimpleName());
+        
 
         onCreate(sqLiteDatabase);
     }
